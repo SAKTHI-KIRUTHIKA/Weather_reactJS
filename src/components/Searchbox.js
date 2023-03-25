@@ -6,7 +6,7 @@ import Images from './Images';
 function Searchbox() {
   const [city, setCity] = useState('');
   const [data, setData] = useState(null);
-  
+
 
 
   const handleInputChange = (event) => {
@@ -22,6 +22,7 @@ function Searchbox() {
         fetch(`http://api.weatherapi.com/v1/current.json?key=d91d12d0c4fb4581a34150330231603&q=${city}`)
         .then(response => response.json())
         .then(data => setData(data))
+
         .catch(error => console.error(error));
       }
       else{
